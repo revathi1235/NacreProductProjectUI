@@ -225,3 +225,51 @@ background: linear-gradient(90deg, rgba(29,58,175,1) 0%, rgba(2,151,70,1) 100%);
    top:0px;
    z-index:99
    }
+
+
+
+
+
+
+
+
+
+
+   /* ==================apora===================================== */
+   .common-borderleft{
+    border-left: 20px solid blue;
+    height: 92.4vh;
+    
+   }
+   .picker-dashboard-maindiv{
+       
+        display: flex;
+        justify-content: center;  
+        align-items: center;      
+        height: 80vh;          
+        gap: 20px;               
+        flex-wrap: wrap;         
+   
+   }
+   .picker-dashboard-maindiv .card-body{
+    cursor: pointer;
+   }
+   .largebutton {
+    width: 100%; /* Full width on mobile */
+    max-width: 500px; /* Maximum width for larger screens */
+    margin: 8px auto; /* Center-aligns the button with spacing */
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: linear-gradient(to bottom, blue, green);
+    text-align: center; /* Center the text inside each button */
+  }
+
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .largebutton {
+      width: 500px; /* Fixed width for larger screens */
+    }
+  }
