@@ -22,6 +22,7 @@ import Picksupervisor from './Yard/Picksupervisor/Picksupervisor';
 import Picklist from './Yard/Picksupervisor/Picklist'
 import PickerDashboard from './Yard/Picker/PickerDashboard';
 import Addcarton from './Yard/Picker/Addcarton';
+import Junkfile from './Components/Junkfile';
 function App() {
   return (
     <HashRouter>
@@ -49,6 +50,7 @@ function App() {
 
       <Route path='/pickerdashboard' element={<PickerDashboard/>}/>
       <Route path='/addcarton' element={<Addcarton/>}/>
+      <Route path='/junkfile' element={<Junkfile/>}/>
        </Routes>
        </div>
        </HashRouter>

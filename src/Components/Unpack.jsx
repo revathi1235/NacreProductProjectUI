@@ -12,6 +12,7 @@ import {useState,useRef,useEffect} from 'react'
 import { Modal } from 'react-bootstrap';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 function Unpack() {
   
 // -----------------------new code for barcode---------------------------------------
@@ -119,6 +120,11 @@ const [setPackid]=useState('')
     console.warn('Scan failure:' , error);
   };
   
+
+  const navigate=useNavigate()
+  const handleQr=()=>{
+    navigate('/qualitycheck')
+  }
 
   return (
     <div style={{borderLeft:"20px solid rgba(29, 58, 175, 1)",height:"100vh"}}>
@@ -271,7 +277,7 @@ const [setPackid]=useState('')
                   >
                     <Form.Control className="common-fields" />
                   </FloatingLabel>
-                  <Button className='mt-3' variant="success" >
+                  <Button className='mt-3' variant="success" onClick={handleQr}>
                   QR
                   </Button>{" "}
           </Col>

@@ -12,6 +12,7 @@ import {useState,useRef,useEffect} from 'react'
 import { Modal } from 'react-bootstrap';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 function Putaway() {
 
     // -----------------------new code for barcode---------------------------------------
@@ -124,8 +125,12 @@ const [setPackid]=useState('')
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const navigate=useNavigate()
+  const handleSave=()=>{
+    navigate('/stagging')
+  }
   return (
-    <div>
+    <div style={{borderLeft:"20px solid rgba(29, 58, 175, 1)",height:"100vh"}}>
         <CommonNavbar/>
         <Container >
 
@@ -139,7 +144,8 @@ const [setPackid]=useState('')
         </Container>
 
         <div>
-     <Row>
+   <Container>
+   <Row>
       <Col lg={6}>
       <label>
         <input
@@ -163,10 +169,11 @@ const [setPackid]=useState('')
       </label>
       </Col>
      </Row>
+   </Container>
       
      
 
-      <div>
+      <div className='mt-5'>
       {selectedOption === 'hai' && (
         <div>
            <Container>
@@ -240,7 +247,7 @@ const [setPackid]=useState('')
                 </FloatingLabel>
               </Col>
             </Row>
-            <Button variant="success" className='mt-5' onClick={closeModal}>Save</Button>
+            <Button variant="success" className='mt-5' onClick={handleSave}>Save</Button>
           </Container>
           </div>
         )}

@@ -12,6 +12,7 @@ import {useState,useRef,useEffect} from 'react'
 import { Modal } from 'react-bootstrap';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 // import PurveyNavbar from './PurveyNavbar';
 function Stagging() {
       
@@ -120,9 +121,12 @@ const [setPackid]=useState('')
     console.warn('Scan failure:' , error);
   };
   
-
+const navigate=useNavigate()
+const handleNext=()=>{
+  navigate('/adminhomepage')
+}
   return (
-    <div>
+    <div style={{borderLeft:"20px solid rgba(29, 58, 175, 1)",height:"100vh"}}>
         <CommonNavbar/>
         {/* <PurveyNavbar/> */}
         <Container fluid>
@@ -190,6 +194,7 @@ const [setPackid]=useState('')
                 </Col>
             </Row>
         </Container>
+        <Button variant="success" onClick={handleNext} >Next</Button> 
     </div>
   )
 }

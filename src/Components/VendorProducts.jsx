@@ -9,8 +9,13 @@ import "./common.css";
 import Table from "react-bootstrap/Table";
 import Select from "react-select";
 import Navbar from '../Components/Navbar'
+import { useNavigate } from "react-router-dom";
 
 function VendorProducts() {
+  const navigate=useNavigate()
+  const handleAdd=()=>{
+    navigate('/unpack')
+  }
   return (
     <div className='gradient-border '>
       <Navbar/>
@@ -76,7 +81,7 @@ function VendorProducts() {
                   >
                     <Form.Control className="common-fields" />
                   </FloatingLabel>
-                  <Button variant="success" className="mt-4">
+                  <Button variant="success" className="mt-4" onClick={handleAdd}>
                     Add
                   </Button>{" "}
                 </div>

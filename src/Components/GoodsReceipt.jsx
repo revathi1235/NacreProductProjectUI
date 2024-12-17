@@ -60,7 +60,7 @@ function GoodsReceipt() {
     setIsVisibleCrossdocking(true)
   }
   return (
-    <div className="gradient-border">
+    <div className="gradient-border" >
       <Navbar />
       <Container>
         <Row className="mt-4">

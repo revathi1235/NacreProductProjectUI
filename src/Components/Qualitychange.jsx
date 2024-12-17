@@ -11,6 +11,7 @@ import CommonNavbar from '../Components/CommonNavbar'
 import {useState,useRef,useEffect} from 'react'
 import { Modal } from 'react-bootstrap';
 import { Html5QrcodeScanner } from 'html5-qrcode';
+import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 function Qualitychange() {
   
@@ -119,7 +120,10 @@ const [setPackid]=useState('')
     console.warn('Scan failure:' , error);
   };
   
-
+const navigate=useNavigate()
+const handleReject=()=>{
+  navigate('/putaway')
+}
   return (
     <div style={{borderLeft:"20px solid rgba(29, 58, 175, 1)",height:"100vh"}}>
     <CommonNavbar/>
@@ -181,7 +185,7 @@ const [setPackid]=useState('')
             </Col>
             <Col lg={6} >
             <div className="table-responsive">
-              <Table className="mt-5">
+              <Table>
                 <thead className="bg-secondary size-sm">
                   <tr className="common-table-thead">
                     <th>Product ID</th>
@@ -243,7 +247,7 @@ const [setPackid]=useState('')
 
                     </Col>
                     <Col lg={6}>
-                    <Button variant="danger" onClick={closeModal}>Reject</Button>
+                    <Button variant="danger" onClick={handleReject}>Reject</Button>
 
                     </Col>
                   </Row>

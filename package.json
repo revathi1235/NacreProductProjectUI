@@ -1,6 +1,7 @@
 {
   "name": "purveywms",
   "version": "0.1.0",
+  "homepage": "https://revathi1235.github.io/NacreProductProjectUI",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -51,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
   }
 }
